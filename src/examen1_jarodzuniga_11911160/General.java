@@ -35,6 +35,10 @@ public class General extends Personas{
         this.sueldo = sueldo;
     }
 
+    General(String identificacion, String nombre, String sexo, String estado, int edad, double altu, double pes, String ocupa, String hora, String tiem, double sueldo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getOcupacion() {
         return ocupacion;
     }

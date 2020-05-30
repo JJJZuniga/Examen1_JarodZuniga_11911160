@@ -25,6 +25,10 @@ public class Gerente extends Personas{
         this.cargo = cargo;
     }
 
+    Gerente(String identificacion, String nombre, String sexo, String estado, double altu, double pes, String user, String cont, String car) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getUsuario() {
         return usuario;
     }
