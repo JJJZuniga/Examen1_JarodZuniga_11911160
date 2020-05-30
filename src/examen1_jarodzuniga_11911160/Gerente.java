@@ -8,10 +8,6 @@ public class Gerente extends Personas{
     public Gerente() {
     }
 
-    public Gerente(String identificacion, String Nombre, String Sexo, String estado_Civil, int edad, double Altura, double Peso) {
-        super(identificacion, Nombre, Sexo, estado_Civil, edad, Altura, Peso);
-    }
-
     public Gerente(String usuario, String contraseña, String cargo) {
         this.usuario = usuario;
         this.contraseña = contraseña;
@@ -23,10 +19,6 @@ public class Gerente extends Personas{
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.cargo = cargo;
-    }
-
-    Gerente(String identificacion, String nombre, String sexo, String estado, double altu, double pes, String user, String cont, String car) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getUsuario() {

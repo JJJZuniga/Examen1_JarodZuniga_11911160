@@ -16,10 +16,6 @@ public class General extends Personas{
     public General() {
     }
 
-    public General(String identificacion, String Nombre, String Sexo, String estado_Civil, int edad, double Altura, double Peso) {
-        super(identificacion, Nombre, Sexo, estado_Civil, edad, Altura, Peso);
-    }
-
     public General(String ocupacion, String horario, String tiempo_trab, double sueldo) {
         this.ocupacion = ocupacion;
         this.horario = horario;
@@ -35,9 +31,7 @@ public class General extends Personas{
         this.sueldo = sueldo;
     }
 
-    General(String identificacion, String nombre, String sexo, String estado, int edad, double altu, double pes, String ocupa, String hora, String tiem, double sueldo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     public String getOcupacion() {
         return ocupacion;

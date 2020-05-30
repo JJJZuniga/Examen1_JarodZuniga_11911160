@@ -7,6 +7,8 @@ package examen1_jarodzuniga_11911160;
 
 import java.awt.PopupMenu;
 import java.util.ArrayList;
+import java.util.ListIterator;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.bind.annotation.XmlElement;
@@ -16,7 +18,7 @@ import javax.xml.bind.annotation.XmlElement;
  * @author Jhon Zuniga
  */
 public class Sistemas extends javax.swing.JFrame {
-    static ArrayList personas=new ArrayList();
+
     public Sistemas() {
         initComponents();
         jTabbedPane2.setEnabledAt(1, false);
@@ -27,13 +29,12 @@ public class Sistemas extends javax.swing.JFrame {
         jTabbedPane2.setEnabledAt(6, false);
         this.setExtendedState(MAXIMIZED_BOTH);
         jTextField11.setEnabled(false);
-           jTextField12.setEnabled(false);
-           jTextField10.setEnabled(false);
-           jTextField13.setEnabled(false);
-           jTextField8.setEnabled(false);
-           jTextField9.setEnabled(false);
-           jTextField5.setEnabled(false);
-          
+        jTextField12.setEnabled(false);
+        jTextField10.setEnabled(false);
+        jTextField13.setEnabled(false);
+        jTextField8.setEnabled(false);
+        jTextField9.setEnabled(false);
+        jTextField5.setEnabled(false);
 
     }
 
@@ -54,26 +55,8 @@ public class Sistemas extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         tablaper = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
-        jPanel11 = new javax.swing.JPanel();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jPanel4 = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
-        jPanel12 = new javax.swing.JPanel();
-        jTabbedPane4 = new javax.swing.JTabbedPane();
-        jPanel5 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jPanel6 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jPanel13 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jPanel10 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -110,6 +93,25 @@ public class Sistemas extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jPanel12 = new javax.swing.JPanel();
+        jTabbedPane4 = new javax.swing.JTabbedPane();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jPanel13 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -174,14 +176,14 @@ public class Sistemas extends javax.swing.JFrame {
 
         tablaper.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Identificacion", "Nombre", "Edad", "Sexo", "Estado civil", "Altura", "peso", "usuario/ocupacion", "contraseña/horario", "Cargo/ tiempo trabajo", "Sueldo"
+                "Identificacion", "Nombre", "Edad", "Sexo", "Estado civil", "Altura"
             }
         ));
         tablaper.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -191,21 +193,30 @@ public class Sistemas extends javax.swing.JFrame {
         });
         jScrollPane6.setViewportView(tablaper);
 
+        jButton5.setText("mostrar datos");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(559, Short.MAX_VALUE))
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(554, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Contactos", jPanel8);
@@ -224,6 +235,129 @@ public class Sistemas extends javax.swing.JFrame {
         );
 
         jTabbedPane2.addTab("Mensajes", jPanel9);
+
+        jPanel10.setEnabled(false);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Identificacion");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 23, -1, -1));
+
+        jLabel3.setText("Nombre");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 63, -1, -1));
+
+        jLabel4.setText("Edad");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 101, -1, -1));
+
+        jLabel5.setText("Sexo");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 139, -1, -1));
+
+        jLabel6.setText("Estado civil");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 170, -1, -1));
+
+        jLabel7.setText("Altura");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 208, -1, -1));
+
+        jLabel8.setText("Peso");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 246, -1, -1));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 20, 662, -1));
+        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 60, 661, -1));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 98, 661, -1));
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 136, 661, -1));
+        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 208, 661, -1));
+        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 246, 661, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "       ", "Soltero/a.", "Comprometido/a.", "En Relación ( más de 1 Año de noviazgo)", "Casado/a.", "Unión libre o unión de hecho.", "Separado/a.", "Divorciado/a.", "Viudo/a." }));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 167, 661, -1));
+
+        jLabel9.setText("Tipo de persona");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", "Persona general" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 296, 500, -1));
+
+        jLabel10.setText("Usuario");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 351, -1, -1));
+
+        jLabel11.setText("Contraseña");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 389, -1, -1));
+
+        jLabel12.setText("Cargo");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 427, -1, -1));
+        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 424, 200, -1));
+        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 348, 200, -1));
+        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 386, 200, -1));
+
+        jLabel13.setText("Ocupacion");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, -1, -1));
+
+        jLabel14.setText("Horario");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, -1, -1));
+
+        jLabel15.setText("Tiempo de trabajo");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, -1, -1));
+
+        jLabel16.setText("Sueldo");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 480, -1, -1));
+        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 220, -1));
+        jPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 220, -1));
+        jPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 190, -1));
+        jPanel1.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 480, 240, -1));
+
+        jButton3.setText("Agregar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 170, 60));
+
+        jButton4.setText("Limpiar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 530, 280, 60));
+
+        jTabbedPane1.addTab("Agregar persona", jPanel1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Agregar objeto", jPanel2);
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 652, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addGap(191, 191, 191))
+        );
+
+        jTabbedPane2.addTab("Agregar", jPanel10);
 
         jPanel11.setEnabled(false);
 
@@ -442,129 +576,6 @@ public class Sistemas extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Listar todo", jPanel13);
 
-        jPanel10.setEnabled(false);
-
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("Identificacion");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 23, -1, -1));
-
-        jLabel3.setText("Nombre");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 63, -1, -1));
-
-        jLabel4.setText("Edad");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 101, -1, -1));
-
-        jLabel5.setText("Sexo");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 139, -1, -1));
-
-        jLabel6.setText("Estado civil");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 170, -1, -1));
-
-        jLabel7.setText("Altura");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 208, -1, -1));
-
-        jLabel8.setText("Peso");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 246, -1, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 20, 662, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 60, 661, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 98, 661, -1));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 136, 661, -1));
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 208, 661, -1));
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 246, 661, -1));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "       ", "Soltero/a.", "Comprometido/a.", "En Relación ( más de 1 Año de noviazgo)", "Casado/a.", "Unión libre o unión de hecho.", "Separado/a.", "Divorciado/a.", "Viudo/a." }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 167, 661, -1));
-
-        jLabel9.setText("Tipo de persona");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", "Persona general" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 296, 500, -1));
-
-        jLabel10.setText("Usuario");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 351, -1, -1));
-
-        jLabel11.setText("Contraseña");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 389, -1, -1));
-
-        jLabel12.setText("Cargo");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 427, -1, -1));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 424, 200, -1));
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 348, 200, -1));
-        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 386, 200, -1));
-
-        jLabel13.setText("Ocupacion");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, -1, -1));
-
-        jLabel14.setText("Horario");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 390, -1, -1));
-
-        jLabel15.setText("Tiempo de trabajo");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, -1, -1));
-
-        jLabel16.setText("Sueldo");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 480, -1, -1));
-        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 220, -1));
-        jPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 220, -1));
-        jPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 430, 190, -1));
-        jPanel1.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 480, 240, -1));
-
-        jButton3.setText("Agregar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 170, 60));
-
-        jButton4.setText("Limpiar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 530, 280, 60));
-
-        jTabbedPane1.addTab("Agregar persona", jPanel1);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Agregar objeto", jPanel2);
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 652, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addGap(191, 191, 191))
-        );
-
-        jTabbedPane2.addTab("Agregar", jPanel10);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -592,12 +603,11 @@ public class Sistemas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Bienvenido");
 
             jTabbedPane2.setEnabledAt(1, true);
-            jTabbedPane2.setEnabledAt(2,true);
+            jTabbedPane2.setEnabledAt(2, true);
             jTabbedPane2.setEnabledAt(3, true);
             jTabbedPane2.setEnabledAt(4, true);
             jTabbedPane2.setEnabledAt(5, true);
             jTabbedPane2.setEnabledAt(6, true);
-
 
         } else {
             JOptionPane.showMessageDialog(this, "contraseña erronea, fuera intruso");
@@ -605,7 +615,7 @@ public class Sistemas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTabbedPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane2MouseClicked
-       
+
     }//GEN-LAST:event_jTabbedPane2MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -613,80 +623,79 @@ public class Sistemas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jPanel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel13MouseClicked
-         
+
     }//GEN-LAST:event_jPanel13MouseClicked
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-       String var;
-       if(jComboBox2.getSelectedItem().equals("Gerente")){
-           jTextField8.setEnabled(true);
-           jTextField9.setEnabled(true);
-           jTextField5.setEnabled(true);
-           jTextField11.setEnabled(false);
-           jTextField12.setEnabled(false);
-           jTextField10.setEnabled(false);
-           jTextField13.setEnabled(false);
-          
-       }else{
-           jTextField11.setEnabled(true);
-           jTextField12.setEnabled(true);
-           jTextField10.setEnabled(true);
-           jTextField13.setEnabled(true);
+        String var;
+        if (jComboBox2.getSelectedItem().equals("Gerente")) {
+            jTextField8.setEnabled(true);
+            jTextField9.setEnabled(true);
+            jTextField5.setEnabled(true);
+            jTextField11.setEnabled(false);
+            jTextField12.setEnabled(false);
+            jTextField10.setEnabled(false);
+            jTextField13.setEnabled(false);
+
+        } else {
+            jTextField11.setEnabled(true);
+            jTextField12.setEnabled(true);
+            jTextField10.setEnabled(true);
+            jTextField13.setEnabled(true);
             jTextField8.setEnabled(false);
-           jTextField9.setEnabled(false);
-           jTextField5.setEnabled(false);
-           
-       }
+            jTextField9.setEnabled(false);
+            jTextField5.setEnabled(false);
+
+        }
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       jTextField1.setText("");
-       jTextField2.setText("");
-       jTextField3.setText("");
-       jTextField4.setText("");
-       jTextField5.setText("");
-       jTextField6.setText("");
-       jTextField7.setText("");
-       jTextField8.setText("");
-       jTextField9.setText("");
-       jTextField10.setText("");
-       jTextField11.setText("");
-       jTextField12.setText("");
-       jTextField13.setText("");
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+        jTextField7.setText("");
+        jTextField8.setText("");
+        jTextField9.setText("");
+        jTextField10.setText("");
+        jTextField11.setText("");
+        jTextField12.setText("");
+        jTextField13.setText("");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       String identificacion,nombre, sexo, estado,user,cont,car,ocupa,hora,tiem;
-       int edad;
-       double altu, pes,sueldo;
-       identificacion=jTextField1.getText();
-       nombre=jTextField2.getText();
-       edad=Integer.parseInt(jTextField3.getText());
-       sexo=jTextField4.getText();
-       estado=(String) jComboBox1.getSelectedItem();
-       altu=Double.parseDouble(jTextField6.getText());
-       pes=Double.parseDouble(jTextField7.getText());
-       user=jTextField8.getText();
-       cont=jTextField9.getText();
-       car=jTextField5.getText();
-       ocupa=jTextField10.getText();
-       hora=jTextField11.getText();
-       tiem=jTextField12.getText();
-       sueldo=Double.parseDouble(jTextField13.getText());
-        if(jComboBox2.getSelectedItem().equals("Gerente")){
-           personas.add(new Gerente(identificacion,nombre, sexo, estado,altu, pes,user,cont,car));
-          JOptionPane.showMessageDialog(this, "Agregado correctamente");
-       }else  if(jComboBox2.getSelectedItem().equals("Persona general")){
-           personas.add(new General(identificacion, nombre, sexo, estado, edad, altu, pes,ocupa,hora,tiem,sueldo));
-           JOptionPane.showMessageDialog(this, "Agregado correctamente");
-           
-       }
+        String identificacion, nombre, sexo, estado, user, cont, car, ocupa, hora, tiem;
+        int edad;
+        double altu, pes, sueldo;
+        identificacion = jTextField1.getText();
+        nombre = jTextField2.getText();
+        edad = Integer.parseInt(jTextField3.getText());
+        sexo = jTextField4.getText();
+        estado = (String) jComboBox1.getSelectedItem();
+        altu = Double.parseDouble(jTextField6.getText());
+        pes = Double.parseDouble(jTextField7.getText());
+        if (jComboBox2.getSelectedItem().equals("Gerente")) {
+            user = jTextField8.getText();
+            cont = jTextField9.getText();
+            car = jTextField5.getText();
+            personas.add(new Gerente(user, cont, car, identificacion, nombre, sexo, estado, edad, altu, pes));
+            JOptionPane.showMessageDialog(this, "Agregado correctamente");
+        } else if (jComboBox2.getSelectedItem().equals("Persona general")) {
+            ocupa = jTextField10.getText();
+            hora = jTextField11.getText();
+            tiem = jTextField12.getText();
+            sueldo = Double.parseDouble(jTextField13.getText());
+            personas.add(new General(ocupa, hora, tiem, sueldo, identificacion, nombre, sexo, estado, edad, altu, pes));
+            JOptionPane.showMessageDialog(this, "Agregado correctamente");
+
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void tablaperMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaperMouseClicked
-        for (Object p: personas) {
-            tablaper.add((PopupMenu) p);
-        }
+
+
     }//GEN-LAST:event_tablaperMouseClicked
 
     /**
@@ -729,6 +738,7 @@ public class Sistemas extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -790,4 +800,9 @@ public class Sistemas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTable tablaper;
     // End of variables declaration//GEN-END:variables
+ArrayList personas = new ArrayList();
+    DefaultListModel modelo = new DefaultListModel();
+    DefaultTableModel mitabla = new DefaultTableModel();
+    int cantidad;
+    public ListIterator<Personas> ListaIterator;
 }
